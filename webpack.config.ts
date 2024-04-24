@@ -8,17 +8,6 @@ import type { Configuration as DevServerConfiguration } from "webpack-dev-server
 const BUILD_DIR = path.resolve(__dirname, "build");
 const PUBLIC_DIR = path.resolve(__dirname, "public");
 
-const plugins = [
-  new EnvironmentPlugin({
-    TOKEN: "",
-  }),
-  new HtmlWebpackPlugin({ template: path.join(PUBLIC_DIR, "index.html") }),
-  new MiniCssExtractPlugin({
-    filename: "css/[name].[contenthash].css",
-    chunkFilename: "css/[name].[contenthash].css",
-  }),
-];
-
 const devServer: DevServerConfiguration = {
   port: 3000,
   open: true,
@@ -30,6 +19,19 @@ type Env = {
 };
 export default (env: Env) => {
   const isDev = env.mode === "development";
+  const isProd = env.mode === "production";
+
+  const plugins = [
+    new EnvironmentPlugin({
+      TOKEN: "",
+    }),
+    new HtmlWebpackPlugin({ template: path.join(PUBLIC_DIR, "index.html") }),
+    isProd &&
+      new MiniCssExtractPlugin({
+        filename: "css/[name].[contenthash].css",
+        chunkFilename: "css/[name].[contenthash].css",
+      }),
+  ];
 
   const config: webpack.Configuration = {
     mode: env.mode ?? "development",
