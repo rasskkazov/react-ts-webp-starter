@@ -2,6 +2,7 @@ import webpack from "webpack";
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { EnvironmentPlugin } from "webpack";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
 
 const BUILD_DIR = path.resolve(__dirname, "build");
@@ -12,6 +13,10 @@ const plugins = [
     TOKEN: "",
   }),
   new HtmlWebpackPlugin({ template: path.join(PUBLIC_DIR, "index.html") }),
+  new MiniCssExtractPlugin({
+    filename: "css/[name].[contenthash].css",
+    chunkFilename: "css/[name].[contenthash].css",
+  }),
 ];
 
 const devServer: DevServerConfiguration = {
@@ -34,6 +39,14 @@ export default (env: Env) => {
     module: {
       rules: [
         {
+          test: /\.s[ac]ss$/i,
+          use: [
+            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+            "css-loader",
+            "sass-loader",
+          ],
+        },
+        {
           test: /\.tsx?$/,
           use: "ts-loader",
           exclude: /node_modules/,
@@ -41,7 +54,7 @@ export default (env: Env) => {
       ],
     },
     resolve: {
-      extensions: [".tsx", ".ts", ".js"],
+      extensions: [".tsx", ".ts", ".js", ".scss"],
     },
 
     output: {

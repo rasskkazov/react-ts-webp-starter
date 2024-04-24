@@ -1,3 +1,4 @@
+import "./app";
 export const App = () => {
   return (
     <>
