@@ -29,7 +29,7 @@ export default (env: Env) => {
   const config: webpack.Configuration = {
     mode: env.mode ?? "development",
     plugins,
-    entry: path.join(__dirname, "src", "index.ts"),
+    entry: path.join(__dirname, "src", "index.tsx"),
 
     module: {
       rules: [
@@ -49,7 +49,7 @@ export default (env: Env) => {
       filename: "[name].[contenthash].js",
       clean: true,
     },
-    devtool: isDev ? "inline-source-map" : false,
+    devtool: isDev ? "inline-source-map" : undefined,
     devServer: isDev ? devServer : undefined,
   };
 
