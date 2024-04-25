@@ -5,11 +5,20 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 export function buildLoaders({ mode }: BuildOptions): ModuleOptions["rules"] {
   const isDev = mode === "development";
 
+  const cssLoaderWithModules = {
+    loader: "css-loader",
+    options: {
+      modules: {
+        localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64:8]",
+      },
+    },
+  };
+
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
       isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-      "css-loader",
+      cssLoaderWithModules,
       "sass-loader",
     ],
   };

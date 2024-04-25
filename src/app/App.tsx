@@ -1,9 +1,9 @@
-import "./app.scss";
+import * as classes from "./App.module.scss";
 export const App = () => {
   return (
     <>
-      <div className="header">Hello</div>
-      <div className="footer">Bye</div>
+      <div className={classes.header}>Hello</div>
+      <div>Bye</div>
     </>
   );
 };
