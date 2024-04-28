@@ -1,9 +1,7 @@
 import * as classes from "./App.module.scss";
+import path from "path";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router/Router";
 export const App = () => {
-  return (
-    <>
-      <div className={classes.header}>Hello</div>
-      <div>Bye</div>
-    </>
-  );
+  return <RouterProvider router={router} />;
 };
