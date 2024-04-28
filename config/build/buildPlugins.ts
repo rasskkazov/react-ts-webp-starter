@@ -3,6 +3,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { EnvironmentPlugin } from "webpack";
 import { Configuration } from "webpack";
 import { BuildOptions } from "./types/types";
+import { envVars } from "../env/variables";
 
 export function buildPlugins({
   mode,
@@ -14,9 +15,7 @@ export function buildPlugins({
 
   plugins.push(
     new HtmlWebpackPlugin({ template: paths.html }),
-    new EnvironmentPlugin({
-      PORT: null,
-    })
+    new EnvironmentPlugin(envVars)
   );
 
   if (isProd) {
