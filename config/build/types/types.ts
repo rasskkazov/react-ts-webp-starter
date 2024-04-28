@@ -1,9 +1,7 @@
 import { Configuration } from "webpack";
 
 export type BuildPaths = {
-  entry: string;
-  html: string;
-  output: string;
+  [key: string]: string;
 };
 
 export type Env = {

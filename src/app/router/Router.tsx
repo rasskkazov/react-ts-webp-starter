@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import Root from "../../shared/layout/Root";
-import { Main, Secondary } from "../../pages";
-import ErrorPage from "../../pages/error/ErrorPage";
-import { paths } from "../../shared/layout/paths";
+import Root from "@/shared/layout/Root";
+import { Main, Secondary } from "@/pages";
+import ErrorPage from "@/pages/error/ErrorPage";
+import { paths } from "@/shared/layout/paths";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -16,6 +16,11 @@ export const router = createBrowserRouter([
       },
       {
         path: `${paths.SECOND}/:secondId`,
+        element: <Secondary />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: `${paths.SECOND}`,
         element: <Secondary />,
         errorElement: <ErrorPage />,
       },
