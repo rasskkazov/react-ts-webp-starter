@@ -1,6 +1,6 @@
-import ava from "@/assets/ava.png";
-import wall from "@/assets/wall.jpg";
-import Vec from "@/assets/vector.svg";
+import ava from "@/shared/assets/ava.png";
+import wall from "@/shared/assets/wall.jpg";
+import Vec from "@/shared/assets/vector.svg";
 export const Main = () => {
   return (
     <>

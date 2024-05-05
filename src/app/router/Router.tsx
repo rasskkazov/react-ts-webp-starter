@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import Root from "@/shared/layout/Root";
+import Root from "@/pages/layout/Root";
 import { Main, Secondary } from "@/pages";
 import ErrorPage from "@/pages/error/ErrorPage";
-import { paths } from "@/shared/layout/paths";
+import { paths } from "@/shared/constant/paths";
 export const router = createBrowserRouter([
   {
     path: "/",
