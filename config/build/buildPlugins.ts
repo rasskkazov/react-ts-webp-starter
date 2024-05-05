@@ -4,6 +4,7 @@ import { EnvironmentPlugin } from "webpack";
 import { Configuration } from "webpack";
 import { BuildOptions } from "./types/types";
 import { envVars } from "../env/variables";
+import path from "path";
 
 export function buildPlugins({
   mode,
@@ -14,7 +15,10 @@ export function buildPlugins({
   const plugins: Configuration["plugins"] = [];
 
   plugins.push(
-    new HtmlWebpackPlugin({ template: paths.html }),
+    new HtmlWebpackPlugin({
+      template: paths.html,
+      favicon: path.resolve(paths.public, "favicon.ico"),
+    }),
     new EnvironmentPlugin(envVars)
   );
 

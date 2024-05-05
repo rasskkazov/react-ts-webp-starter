@@ -9,6 +9,7 @@ export default (env: Env) => {
       html: path.resolve(__dirname, "public", "index.html"),
       output: path.resolve(__dirname, "bundle"),
       src: path.resolve(__dirname, "src"),
+      public: path.resolve(__dirname, "public"),
     },
     mode: env.mode ?? "development",
   };
