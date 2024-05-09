@@ -2,6 +2,7 @@ import wall from "@/shared/assets/wall.jpg";
 import Vec from "@/shared/assets/vector.svg";
 import ava from "@/shared/assets/ava.webp";
 import { HeavyWidget } from "@/widgets";
+import { Suspense } from "react";
 export const Main = () => {
   return (
     <>
@@ -11,7 +12,9 @@ export const Main = () => {
         <img src={ava} alt="" width={100} />
         <Vec width={16} color="green" />
       </div>
-      <HeavyWidget />
+      <Suspense fallback={<div>Loading...</div>}>
+        <HeavyWidget />
+      </Suspense>
     </>
   );
 };
