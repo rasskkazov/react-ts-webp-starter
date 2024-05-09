@@ -30,7 +30,7 @@ export function buildLoaders({ mode }: BuildOptions): ModuleOptions["rules"] {
   };
 
   const assetLoader = {
-    test: /\.(png|jpe?g|gif)$/i,
+    test: /\.(png|jpe?g|gif|webp)$/i,
     type: "asset/resource",
   };
 
