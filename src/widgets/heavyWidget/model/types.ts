@@ -5,4 +5,4 @@ export type Todo = {
   completed: boolean;
 };
 
-export type TodoData = Todo[];
+export type Todos = Todo[];

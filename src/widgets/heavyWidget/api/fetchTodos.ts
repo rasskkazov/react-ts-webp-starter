@@ -1,5 +1,5 @@
 import axios from "axios";
-import { TodoData } from "../model/types";
+import { Todos } from "../model/types";
 
 const BASE_URL = "https://jsonplaceholder.typicode.com";
 axios.defaults.baseURL = BASE_URL;
@@ -11,6 +11,10 @@ const options = {
   },
 };
 
-export const fetchHeavyData = (signal: AbortSignal): Promise<TodoData> => {
+export const fetchTodos = ({
+  signal,
+}: {
+  signal?: AbortSignal;
+}): Promise<Todos> => {
   return axios.get("/todos", { ...options, signal }).then((res) => res.data);
 };

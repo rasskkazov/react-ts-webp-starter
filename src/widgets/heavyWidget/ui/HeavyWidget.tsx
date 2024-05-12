@@ -1,21 +1,15 @@
-import ani from "@/shared/assets/anime.png";
-import { useQuery } from "@tanstack/react-query";
-import { fetchHeavyData } from "../api/fetchHeavyData";
-import { TodoData } from "../model/types";
-import { getData } from "@/shared/api/getData";
+import anime from "@/shared/assets/anime.png";
+import { useFetchHeavyWidget } from "../lib/hooks/useFetchHeavyWidget";
 
 export default () => {
-  const { data, error, isLoading } = getData<TodoData>({
-    makeRequest: (signal) => fetchHeavyData(signal),
-    queryKey: ["todo"],
-  });
+  const { data, error, isLoading } = useFetchHeavyWidget();
 
   return (
     <>
       <div>It's the Heavy Widget, bruh</div>
       <div className="images">
-        <img src={ani} alt="" width={100} />
-        <img src={ani} alt="" width={100} />
+        <img src={anime} alt="" width={100} />
+        <img src={anime} alt="" width={100} />
       </div>
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
