@@ -1,9 +1,9 @@
 import { paths } from "@/shared/constant/paths";
 import { Link } from "react-router-dom";
-
+import * as classes from "./Navigation.module.scss";
 export const Navigation = () => {
   return (
-    <nav>
+    <nav className={classes.navigation}>
       <ul>
         <li>
           <Link to={paths.MAIN}>Main</Link>

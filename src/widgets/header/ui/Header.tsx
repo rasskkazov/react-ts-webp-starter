@@ -1,10 +1,11 @@
 import { Navigation } from "@/features";
 import * as classes from "./Header.module.scss";
+import { Button } from "@/shared/ui/Button/Button";
 export const Header = () => {
   return (
     <div className={classes.header}>
       <Navigation />
-      Its header
+      <Button text="Sign in" />
     </div>
   );
 };

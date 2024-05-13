@@ -1,11 +1,12 @@
 import wall from "@/shared/assets/img/wall.jpg";
 import Vec from "@/shared/assets/svg/vector.svg";
 import ava from "@/shared/assets/img/ava.webp";
+import * as classes from "./Main.module.scss";
 import { HeavyWidget } from "@/widgets";
 import { Suspense } from "react";
 export const Main = () => {
   return (
-    <>
+    <div>
       <div>It's the Main page, bruh</div>
       <div className="images">
         <img src={wall} alt="" width={100} />
@@ -15,6 +16,6 @@ export const Main = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <HeavyWidget />
       </Suspense>
-    </>
+    </div>
   );
 };

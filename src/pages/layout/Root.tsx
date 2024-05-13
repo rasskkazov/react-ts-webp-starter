@@ -1,11 +1,12 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Header } from "@/widgets";
+import * as classes from "./Root.module.scss";
 
 export default function Root() {
   return (
     <>
       <Header />
-      <main>
+      <main className={classes.main}>
         <Outlet />
       </main>
     </>
