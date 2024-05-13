@@ -1,0 +1,12 @@
+@mixin font($font-family: "", $font-weight: "") {
+  @font-face {
+    font-weight: $font-weight;
+    font-family: $font-family;
+    src: url("@/shared/assets/font/#{$font-family}-#{$font-weight}.ttf")
+      format("truetype");
+  }
+}
+
+@include font("UbuntuSans", 300);
+@include font("UbuntuSans", 400);
+@include font("UbuntuSans", 700);

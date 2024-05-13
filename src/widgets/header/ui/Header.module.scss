@@ -1,6 +1,9 @@
+@import "@/shared/styles";
+
 .header {
   display: flex;
   justify-content: space-between;
+  color: $accent;
   font-size: 1.4rem;
-  background-color: #75a99c;
+  background-color: $primary;
 }

@@ -1,6 +1,6 @@
-import wall from "@/shared/assets/wall.jpg";
-import Vec from "@/shared/assets/vector.svg";
-import ava from "@/shared/assets/ava.webp";
+import wall from "@/shared/assets/img/wall.jpg";
+import Vec from "@/shared/assets/svg/vector.svg";
+import ava from "@/shared/assets/img/ava.webp";
 import { HeavyWidget } from "@/widgets";
 import { Suspense } from "react";
 export const Main = () => {

@@ -1,4 +1,4 @@
-import anime from "@/shared/assets/anime.png";
+import anime from "@/shared/assets/img/anime.png";
 import { useFetchHeavyWidget } from "../lib/hooks/useFetchHeavyWidget";
 
 export default () => {
