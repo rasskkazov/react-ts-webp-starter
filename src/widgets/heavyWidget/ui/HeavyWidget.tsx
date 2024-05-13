@@ -1,8 +1,8 @@
 import anime from "@/shared/assets/img/anime.png";
-import { useFetchHeavyWidget } from "../lib/hooks/useFetchHeavyWidget";
+import { useFetchTodos } from "../lib/hooks/useFetchTodos";
 
 export default () => {
-  const { data, error, isLoading } = useFetchHeavyWidget();
+  const { data, error, isLoading } = useFetchTodos();
 
   return (
     <>
