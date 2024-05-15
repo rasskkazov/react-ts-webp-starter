@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "@/pages/layout/Root";
-import { Main, Secondary } from "@/pages";
+import { Main, TodoPage } from "@/pages";
 import ErrorPage from "@/pages/error/ErrorPage";
 import { paths } from "@/shared/constant/paths";
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: paths.MAIN,
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
@@ -15,13 +15,8 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
       {
-        path: `${paths.SECOND}/:secondId`,
-        element: <Secondary />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: `${paths.SECOND}`,
-        element: <Secondary />,
+        path: paths.TODO,
+        element: <TodoPage />,
         errorElement: <ErrorPage />,
       },
     ],

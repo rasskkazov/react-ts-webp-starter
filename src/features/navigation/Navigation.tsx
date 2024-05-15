@@ -9,7 +9,7 @@ export const Navigation = () => {
           <Link to={paths.MAIN}>Main</Link>
         </li>
         <li>
-          <Link to={`${paths.SECOND}/1`}>Secondary</Link>
+          <Link to={`${paths.TODO}`}>Todo</Link>
         </li>
         <li>
           <Link to={"/nonexisting"}>Non existing</Link>

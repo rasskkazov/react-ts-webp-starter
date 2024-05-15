@@ -1,4 +1,4 @@
 export enum paths {
   MAIN = "/",
-  SECOND = "second",
+  TODO = "todo",
 }
