@@ -13,4 +13,10 @@
     transform: translateY(-2px);
     cursor: pointer;
   }
+
+  &[disabled] {
+    color: $black;
+    background-color: $grey;
+    opacity: 0.5;
+  }
 }

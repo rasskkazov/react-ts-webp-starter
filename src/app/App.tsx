@@ -1,13 +1,21 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router/Router";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "@/shared/api/queryClient";
 import "./App.scss";
-const queryClient = new QueryClient({});
+import { createContext } from "react";
+import { store } from "./model/RootStore";
+
+export const Context = createContext({
+  store,
+});
 
 export const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <Context.Provider value={{ store }}>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </Context.Provider>
   );
 };
