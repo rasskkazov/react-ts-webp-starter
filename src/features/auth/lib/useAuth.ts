@@ -1,20 +1,17 @@
-import { Context } from "@/app/App";
-import { useContext } from "react";
+import { authStore } from "../model/authStore";
 
 export const useAuth = () => {
-  const { store } = useContext(Context);
-
   const handleLogIn = () => {
     const login = prompt("Enter login (admin)");
-    store.authStore.login(login);
+    authStore.login(login);
   };
 
   const handleLogOut = () => {
-    store.authStore.logout();
+    authStore.logout();
   };
 
-  const isAuth = store.authStore.isAuth;
-  const isLoading = store.authStore.isLoading;
+  const isAuth = authStore.isAuth;
+  const isLoading = authStore.isLoading;
 
   return { isAuth, isLoading, handleLogIn, handleLogOut };
 };

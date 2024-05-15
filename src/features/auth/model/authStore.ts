@@ -1,8 +1,8 @@
-import { User } from "@/entity";
+import { User } from "@/entities";
 import { mockAuth } from "@/shared/lib/mockAuth";
 import { makeAutoObservable } from "mobx";
 
-export class AuthStore {
+class AuthStore {
   constructor() {
     makeAutoObservable(this);
   }
@@ -46,3 +46,5 @@ export class AuthStore {
     }
   }
 }
+
+export const authStore = new AuthStore();
