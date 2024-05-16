@@ -1,8 +1,9 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "@/widgets";
+
 import * as classes from "./Root.module.scss";
 
-export default function Root() {
+export const Root = () => {
   return (
     <>
       <Header />
@@ -11,4 +12,4 @@ export default function Root() {
       </main>
     </>
   );
-}
+};

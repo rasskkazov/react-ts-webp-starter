@@ -1,7 +1,9 @@
-import { Button } from "@/shared/ui/Button";
 import { observer } from "mobx-react";
+import { Button } from "@/shared/ui/Button";
+
 import { useAuth } from "../lib/useAuth";
 import * as classes from "./Auth.module.scss";
+
 export const Auth = observer(() => {
   const { isAuth, isLoading, handleLogIn, handleLogOut } = useAuth();
 

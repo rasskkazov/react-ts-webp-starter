@@ -1,6 +1,8 @@
-import { paths } from "@/shared/constant/paths";
 import { Link } from "react-router-dom";
+import { paths } from "@/shared/constant/paths";
+
 import * as classes from "./Navigation.module.scss";
+
 export const Navigation = () => {
   return (
     <nav className={classes.navigation}>

@@ -1,6 +1,6 @@
+import { makeAutoObservable } from "mobx";
 import { User } from "@/entities";
 import { mockAuth } from "@/shared/lib/mockAuth";
-import { makeAutoObservable } from "mobx";
 
 class AuthStore {
   constructor() {

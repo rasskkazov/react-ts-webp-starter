@@ -1,4 +1,3 @@
-import { authStore } from "@/features";
 import { useFetchTodos } from "../lib/useFetchTodos";
 
 export const TodoList = () => {

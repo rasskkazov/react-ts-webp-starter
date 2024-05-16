@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import { Todos } from "../model/types";
 
 const BASE_URL = "https://jsonplaceholder.typicode.com";

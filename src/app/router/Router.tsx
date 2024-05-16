@@ -1,8 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import Root from "@/pages/layout/Root";
-import { Main, TodoPage } from "@/pages";
-import ErrorPage from "@/pages/error/ErrorPage";
+import { Root, ErrorPage, Main, TodoPage } from "@/pages";
 import { paths } from "@/shared/constant/paths";
+
 export const router = createBrowserRouter([
   {
     path: paths.MAIN,

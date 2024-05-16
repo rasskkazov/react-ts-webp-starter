@@ -1,4 +1,5 @@
 import * as classes from "./Button.module.scss";
+
 export const Button = ({
   text,
   onClick,
