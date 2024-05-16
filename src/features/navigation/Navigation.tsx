@@ -11,10 +11,13 @@ export const Navigation = () => {
           <Link to={paths.MAIN}>Main</Link>
         </li>
         <li>
-          <Link to={`${paths.TODO}`}>Todo</Link>
+          <Link to={paths.TODO}>Todo</Link>
         </li>
         <li>
           <Link to={"/nonexisting"}>Non existing</Link>
+        </li>
+        <li>
+          <Link to={paths.PRIVATE}>Private</Link>
         </li>
       </ul>
     </nav>

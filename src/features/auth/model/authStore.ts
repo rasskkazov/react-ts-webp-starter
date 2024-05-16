@@ -11,19 +11,20 @@ class AuthStore {
   isAuth = false;
   isLoading = false;
 
-  setAuth(bool: boolean) {
-    this.isAuth = bool;
-  }
   setUser(user: User) {
     this.user = user;
+  }
+  setAuth(bool: boolean) {
+    this.isAuth = bool;
   }
   setLoading(bool: boolean) {
     this.isLoading = bool;
   }
 
   async login(login: string) {
+    this.setLoading(true);
+
     try {
-      this.setLoading(true);
       const response = await mockAuth(login);
       localStorage.setItem("token", response.token);
       this.setAuth(true);
@@ -37,13 +38,9 @@ class AuthStore {
   }
 
   logout() {
-    try {
-      localStorage.removeItem("token");
-      this.setAuth(false);
-      this.setUser(null);
-    } catch (e) {
-      console.error(e);
-    }
+    localStorage.removeItem("token");
+    this.setAuth(false);
+    this.setUser(null);
   }
 }
 

@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Root, ErrorPage, Main, TodoPage } from "@/pages";
+import { PrivatePage, Root, ErrorPage, Main, TodoPage } from "@/pages";
 import { paths } from "@/shared/constant/paths";
 
 export const router = createBrowserRouter([
@@ -16,6 +16,11 @@ export const router = createBrowserRouter([
       {
         path: paths.TODO,
         element: <TodoPage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: paths.PRIVATE,
+        element: <PrivatePage />,
         errorElement: <ErrorPage />,
       },
     ],
