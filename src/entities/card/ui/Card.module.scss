@@ -1,0 +1,17 @@
+@import "@/shared/styles";
+
+.card {
+  width: 40rem;
+  height: 30rem;
+  overflow: hidden;
+  background-color: $white;
+  border-radius: 1.6rem;
+
+  &__content {
+    padding: 0 0.8rem;
+  }
+
+  img {
+    width: 100%;
+  }
+}
