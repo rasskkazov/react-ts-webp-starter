@@ -14,7 +14,11 @@ export const Card = ({
   return (
     <div className={classes.card}>
       {isLoading && Skeleton()}
-      <img src={img} onLoad={() => setIsLoading(false)} />
+      <img
+        className={`${classes.card__image}${isLoading ? "--loading" : ""}`}
+        src={img}
+        onLoad={() => setIsLoading(false)}
+      />
       {!isLoading && (
         <div className={classes.card__content}>
           <h2>{title}</h2>

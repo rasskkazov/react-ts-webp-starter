@@ -11,7 +11,11 @@
     padding: 0 0.8rem;
   }
 
-  img {
+  &__image {
     width: 100%;
+
+    &--loading {
+      display: none;
+    }
   }
 }
