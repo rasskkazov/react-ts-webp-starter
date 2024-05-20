@@ -1,6 +1,11 @@
 import { useSkeleton } from "@/shared/ui/skeleton/useSkeleton";
 import * as classes from "./Card.module.scss";
 
+export const validateValue = (value: number) => {
+  if (value < 0 || value > 100) return false;
+  return true;
+};
+
 export const Card = ({
   img,
   title,
