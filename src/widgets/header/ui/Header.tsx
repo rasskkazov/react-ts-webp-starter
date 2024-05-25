@@ -4,9 +4,9 @@ import * as classes from "./Header.module.scss";
 
 export const Header = () => {
   return (
-    <div className={classes.header}>
+    <header className={classes.header}>
       <Navigation />
       <Auth />
-    </div>
+    </header>
   );
 };
