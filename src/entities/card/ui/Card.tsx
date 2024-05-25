@@ -1,11 +1,6 @@
 import { useSkeleton } from "@/shared/ui/skeleton/useSkeleton";
 import * as classes from "./Card.module.scss";
 
-export const validateValue = (value: number) => {
-  if (value < 0 || value > 100) return false;
-  return true;
-};
-
 export const Card = ({
   img,
   title,
@@ -16,11 +11,13 @@ export const Card = ({
   description: string;
 }) => {
   const { isLoading, setIsLoading, Skeleton } = useSkeleton();
+  const imgModificator = isLoading ? "--loading" : "";
+
   return (
     <div className={classes.card}>
       {isLoading && Skeleton()}
       <img
-        className={`${classes.card__image}${isLoading ? "--loading" : ""}`}
+        className={`${classes.card__image}${imgModificator}`}
         src={img}
         onLoad={() => setIsLoading(false)}
       />
