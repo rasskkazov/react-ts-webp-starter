@@ -1,13 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { Header } from "./Header";
-import { BrowserRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 
-describe("Header UI", () => {
+describe("Header", () => {
   test("Elements", () => {
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <Header />
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     expect(screen.getByRole("navigation")).toBeInTheDocument();

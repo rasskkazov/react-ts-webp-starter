@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { paths } from "@/shared/constant/paths";
 
-import * as classes from "./Navigation.module.scss";
+import * as classes from "./NavBar.module.scss";
 
-export const Navigation = () => {
+export const NavBar = () => {
   return (
-    <nav className={classes.navigation}>
+    <nav className={classes.navbar}>
       <ul>
         <li>
           <Link to={paths.MAIN}>Main</Link>

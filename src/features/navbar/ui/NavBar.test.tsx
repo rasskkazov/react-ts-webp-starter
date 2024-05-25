@@ -1,16 +1,17 @@
 import { render, screen } from "@testing-library/react";
-import { Navigation } from "./Navigation";
-import { BrowserRouter } from "react-router-dom";
+import { NavBar } from "./NavBar";
+import { MemoryRouter } from "react-router-dom";
 import { paths } from "@/shared/constant/paths";
 
-describe("Navigation UI", () => {
-  test("Links", () => {
+describe("Navigation", () => {
+  beforeEach(() => {
     render(
-      <BrowserRouter>
-        <Navigation />
-      </BrowserRouter>
+      <MemoryRouter>
+        <NavBar />
+      </MemoryRouter>
     );
-
+  });
+  test("Links UI", () => {
     const navNames = ["Main", "Todo", "Non existing", "Private"];
     navNames.forEach((name) =>
       expect(screen.getByText(name)).toBeInTheDocument()

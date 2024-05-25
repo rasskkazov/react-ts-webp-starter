@@ -1,11 +1,11 @@
-import { Auth, Navigation } from "@/features";
+import { Auth, NavBar } from "@/features";
 
 import * as classes from "./Header.module.scss";
 
 export const Header = () => {
   return (
     <header className={classes.header}>
-      <Navigation />
+      <NavBar />
       <Auth />
     </header>
   );
