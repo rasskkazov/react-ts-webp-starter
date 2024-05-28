@@ -4,13 +4,17 @@ html {
   font-size: 10px;
 }
 
-body {
+* {
   box-sizing: border-box;
+}
+
+body {
   margin: 0;
   font-family: UbuntuSans, sans-serif;
 }
 
 ul {
+  margin: 0;
   padding: 0;
   list-style-type: none;
 }
