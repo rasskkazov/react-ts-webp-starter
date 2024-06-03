@@ -11,13 +11,13 @@ export const Card = ({
   description: string;
 }) => {
   const { isLoading, setIsLoading, Skeleton } = useSkeleton();
-  const imgModificator = isLoading ? "--loading" : "";
+  const imgModificator = isLoading ? classes.card__image_loading : "";
 
   return (
     <div className={classes.card}>
       {isLoading && Skeleton()}
       <img
-        className={`${classes.card__image}${imgModificator}`}
+        className={`${classes.card__image} ${imgModificator}`}
         src={img}
         onLoad={() => setIsLoading(false)}
       />
