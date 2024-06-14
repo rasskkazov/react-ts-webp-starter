@@ -14,12 +14,23 @@ export function buildLoaders({ mode }: BuildOptions): ModuleOptions["rules"] {
     },
   };
 
-  const cssLoader = {
-    test: /\.s[ac]ss$/i,
+  const firstPartyCssLoader = {
+    test: /\.(s[ac]ss|css)$/i,
     use: [
       isDev ? "style-loader" : MiniCssExtractPlugin.loader,
       cssLoaderWithModules,
       "sass-loader",
+    ],
+  };
+
+  const cssLoader = {
+    oneOf: [
+      {
+        test: /\.(s[ac]ss|css)$/i,
+        include: /node_modules/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      firstPartyCssLoader,
     ],
   };
 
