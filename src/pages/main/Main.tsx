@@ -6,8 +6,11 @@ import wall from "@/shared/assets/img/wall.jpg";
 import Vec from "@/shared/assets/svg/vector.svg";
 import ava from "@/shared/assets/img/ava.webp";
 import { Card } from "@/entities";
+import { API_TOKEN } from "@/shared/api/apiToken";
 
 export const Main = observer(() => {
+  console.log("Token: ", API_TOKEN);
+
   return (
     <div>
       <Card

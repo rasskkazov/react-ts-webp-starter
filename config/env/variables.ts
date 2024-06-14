@@ -4,4 +4,5 @@ type envVarsT = {
 
 export const envVars: envVarsT = {
   PORT: null,
+  TOKEN: null,
 };

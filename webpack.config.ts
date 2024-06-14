@@ -10,6 +10,7 @@ export default (env: Env) => {
       output: path.resolve(__dirname, "bundle"),
       src: path.resolve(__dirname, "src"),
       public: path.resolve(__dirname, "public"),
+      env: path.resolve(__dirname, ".env.default"),
     },
     mode: env.mode ?? "development",
   };

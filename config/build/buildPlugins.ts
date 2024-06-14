@@ -1,5 +1,7 @@
+import Dotenv from "dotenv-webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+
 import { EnvironmentPlugin } from "webpack";
 import { Configuration } from "webpack";
 import { BuildOptions } from "./types/types";
@@ -18,6 +20,10 @@ export function buildPlugins({
     new HtmlWebpackPlugin({
       template: paths.html,
       favicon: path.resolve(paths.public, "favicon.ico"),
+    }),
+
+    new Dotenv({
+      path: paths.env,
     }),
     new EnvironmentPlugin(envVars)
   );
