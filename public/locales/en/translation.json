@@ -1,0 +1,12 @@
+{
+  "main": {
+    "login": "Log in",
+    "logout": "Log out"
+  },
+  "navbar": {
+    "main": "Main",
+    "todo": "Todo",
+    "nonExisting": "Non existing",
+    "private": "Private"
+  }
+}
